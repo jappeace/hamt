@@ -9,6 +9,10 @@
 
 A [Hash array mapped trie](http://lampwww.epfl.ch/papers/idealhashtrees.pdf)
 
+The goal of the project is to implement the hamt,
+and then to bench mark it with criterion.
+Just for fun.
+
 ## Usage
 ### Tools
 Enter the nix shell.
