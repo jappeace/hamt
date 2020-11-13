@@ -1,6 +1,10 @@
-# Change log for template project
+# Change log for hamt project
+
+## Version 1.0.0 TBA
+
+A fast hamt
 
 ## Version 0.0.0 
 
-import [template](https://github.com/jappeace/haskell-template-project).
+import [hamt](https://github.com/jappeace/haskell-hamt-project).
 
