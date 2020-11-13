@@ -34,19 +34,8 @@ library
   ghc-options: -Wall -Wcompat -Wincomplete-uni-patterns -Wredundant-constraints -Wincomplete-record-updates -Widentities
   build-depends:
       base >=4.7 && <5
-  default-language: Haskell2010
-
-executable exe
-  main-is: exe.hs
-  other-modules:
-      Paths_hamt
-  hs-source-dirs:
-      app
-  default-extensions: EmptyCase FlexibleContexts FlexibleInstances InstanceSigs MultiParamTypeClasses LambdaCase MultiWayIf NamedFieldPuns TupleSections DeriveFoldable DeriveFunctor DeriveGeneric DeriveLift DeriveTraversable DerivingStrategies GeneralizedNewtypeDeriving StandaloneDeriving OverloadedStrings TypeApplications
-  ghc-options: -Wall -Wcompat -Wincomplete-uni-patterns -Wredundant-constraints -Wincomplete-record-updates -Widentities -threaded -rtsopts -with-rtsopts=-N
-  build-depends:
-      base >=4.7 && <5
-    , hamt
+    , hashable
+    , primitive
   default-language: Haskell2010
 
 test-suite unit
@@ -62,6 +51,8 @@ test-suite unit
   build-depends:
       base >=4.7 && <5
     , hamt
+    , hashable
     , hspec
     , hspec-core
+    , primitive
   default-language: Haskell2010
