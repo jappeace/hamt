@@ -23,8 +23,11 @@ data Hamt key value = Empty -- ^ First, the entry is empty indicating that the k
 
 -- this is the size of the smallarray
 -- not related to the size of the bitmap of the hash!
-someBranchingFactor :: Int
-someBranchingFactor = 32
+branchingFactor :: Int
+branchingFactor = 2^bitsTaken -- 5 bits are taken, so 2^5 = 32
+
+bitsTaken :: Int
+bitsTaken = 5
 
 -- http://lampwww.epfl.ch/papers/idealhashtrees.pdf
 -- TODO:
@@ -32,7 +35,6 @@ someBranchingFactor = 32
 -- Map. If this bit is a zero the hash table entry is empty indicating failure, otherwise,
 -- it’s a one, so count the one bits below it using CTPOP and use the result as the
 -- index into the non-empty entry list at Base.
-
 lookup :: Hashable key => key -> Hamt key value -> Maybe value
 lookup key _ = Nothing
   where
